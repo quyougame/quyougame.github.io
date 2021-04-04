@@ -30,6 +30,8 @@ body {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>Quyou Games</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<script src="jquery.js"></script>
+	<script src="browser.js"></script>
 </head>
 <body>
 	<div class="logo">
@@ -37,7 +39,7 @@ body {
 	<div class="content" align="center">
 		<h1 align="center">Black shooter</h1>
 		<p align="center">A very interesting shooting game. Kill all enemies on the map. Be careful not to shoot yourself.</p>
-		<a href="https://itunes.apple.com/app/id1536749915", target="_blank">
+		<a href="https://itunes.apple.com/app/id1536749915", target="_blank" id="downloadIcon1">
 			<img src="img/westworld_icon.jpg">
 		</a>
 	</div>
@@ -46,4 +48,15 @@ body {
 		<p align="center">Support E-mail: quyoustudio@gmail.com</p>
 	</div>
 </body>
+<script>
+function init(){
+	var downloadIcon1 = $("#downloadIcon1");
+	if(is_ios){
+		downloadIcon1.attr("href", "https://itunes.apple.com/app/id1536749915");
+	}else{
+		downloadIcon1.attr("href", "https://play.google.com/store/apps/details?id=com.nckj.westshoot");
+	}
+}
+$(document).ready(init());
+</script>
 </html>
